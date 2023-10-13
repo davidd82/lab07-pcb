@@ -7,7 +7,7 @@ import time
 # Import SPI library (for hardware SPI) and MCP3008 library.
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_MCP3008
-import RPI.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 
 # Hardware SPI configuration:
