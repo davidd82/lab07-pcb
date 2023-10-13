@@ -17,17 +17,17 @@ mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11,GPIO.OUT)
 
-def ledBlink(x):
+def ledBlink(x, board_num):
     for i in range(x):
-        GPIO.output(11, GPIO.HIGH)
+        GPIO.output(board_num, GPIO.HIGH)
         time.sleep(0.5)
-        GPIO.output(11, GPIO.LOW)
+        GPIO.output(board_num, GPIO.LOW)
         time.sleep(0.5)
         i+=1
 
 # Main program loop.
 while True:
-    ledBlink(5)
+    ledBlink(5, 11)
 
     # Read all the ADC channel values in a list.
     values = [0]*8
