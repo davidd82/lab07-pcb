@@ -26,7 +26,6 @@ def ledBlink(x, board_num, interval):
         i+=1
 
 def lightSensor(channel):
-    
     for i in range (50):
         light_val = mcp.read_adc(channel)
         print(light_val)
@@ -43,7 +42,11 @@ while True:
     # LED blinks with 500ms intervals
     ledBlink(5, 11, 0.5)
 
+    # Read light sensor and print value and if dark or bright
     lightSensor(0)
+
+    # LED blinks with 200ms intervals
+    ledBlink(4, 11, 0.2)
     
 
     # Read all the ADC channel values in a list.
