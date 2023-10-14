@@ -50,8 +50,8 @@ def soundSensor(channel, board_num):
         if (sound_val > 500):
             GPIO.output(board_num, GPIO.HIGH)
             count+=1
-            i+=1
-            time.sleep(0.1)
+        i+=1
+        time.sleep(0.1)
 
 # Main program loop.
 while True:
