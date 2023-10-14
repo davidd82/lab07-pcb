@@ -37,6 +37,22 @@ def lightSensor(channel):
         i+=1
         time.sleep(0.1)
 
+def soundSensor(channel, board_num):
+    count = 0
+    for i in range(50):
+        sound_val = mcp.read_adc(channel)
+        print(sound_val)
+
+        if count == 1:
+            count = 0
+            GPIO.output(board_num, GPIO.LOW)
+
+        if (sound_val > 500):
+            GPIO.output(board_num, GPIO.HIGH)
+            count+=1
+            i+=1
+            time.sleep(0.1)
+
 # Main program loop.
 while True:
     # LED blinks with 500ms intervals
@@ -48,13 +64,7 @@ while True:
     # LED blinks with 200ms intervals
     ledBlink(4, 11, 0.2)
     
+    # Read sound sensor and print value and determine if sensor was tapped
+    soundSensor(1,11)
 
-    # Read all the ADC channel values in a list.
-    values = [0]*8
-    for i in range(8):
-        # The read_adc function will get the value of the specified channel (0-7).
-        values[i] = mcp.read_adc(i)
-    # Print the ADC values.
-    print('| {0:>4} | {1:>4} | {2:>4} | {3:>4} | {4:>4} | {5:>4} | {6:>4} | {7:>4} |'.format(*values))
-    # Pause for half a second.
     time.sleep(0.5)
