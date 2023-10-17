@@ -1,6 +1,6 @@
 """
 Team: Michael Qi, David Delgado
-Github: https://github.com/usc-ee250-fall2023/lab-06-rest-lab06_david-michael
+Github: https://github.com/davidd82/lab07-pcb
 """
 import time
 
