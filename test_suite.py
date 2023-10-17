@@ -23,7 +23,7 @@ def ledBlink(x, board_num, interval):
         time.sleep(interval)
         GPIO.output(board_num, GPIO.LOW)
         time.sleep(interval)
-        i+=1
+        #i+=1
 
 def lightSensor(channel):
     for i in range (50):
@@ -34,7 +34,7 @@ def lightSensor(channel):
             print("bright")
         else:
             print("dark")
-        i+=1
+        #i+=1
         time.sleep(0.1)
 
 def soundSensor(channel, board_num):
@@ -50,7 +50,7 @@ def soundSensor(channel, board_num):
         if (sound_val > 500):
             GPIO.output(board_num, GPIO.HIGH)
             count+=1
-        i+=1
+        #i+=1
         time.sleep(0.1)
 
 # Main program loop.
